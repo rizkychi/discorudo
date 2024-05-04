@@ -7,7 +7,7 @@ long_description = (this_directory / "README.md").read_text()
 setup(
     name = 'discorudo',         # How you named your package folder (MyLib)
     packages = ['discorudo'],   # Chose the same as "name"
-    version = '1.1',      # Start with a small number and increase it with every change you make
+    version = '1.2',      # Start with a small number and increase it with every change you make
     license='MIT',        # Chose a license from here: https://help.github.com/articles/licensing-a-repository
     description = 'Just script on to discord',   # Give a short description about your library
     long_description=long_description,            # Give a long description about your library
@@ -27,6 +27,8 @@ setup(
   install_requires=[            # I get to this in a second
           'validators',
           'beautifulsoup4',
+          'numpy',
+          'matplotlib'
       ],
   classifiers=[
     'Development Status :: 3 - Alpha',      # Chose either "3 - Alpha", "4 - Beta" or "5 - Production/Stable" as the current state of your package
