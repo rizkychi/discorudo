@@ -10,7 +10,8 @@ from json import dumps
 import json
 
 # send message to discord channel
-def send_message(conn, channel_id, message, token): 
+def send_message(channel_id, message, token): 
+    conn = HTTPSConnection("discordapp.com", 443)
     header_data = { 
         "content-type": "application/json", 
         "user-agent": "discordapp.com", 
