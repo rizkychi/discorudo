@@ -40,3 +40,26 @@ def send_message(channel_id, message, token):
         stderr.write("Error\n")
 
     return ids
+
+# send message from discord channel
+def del_message(channel_id, message_id, token):
+    conn = HTTPSConnection("discordapp.com", 443)
+    header_data = { 
+        "content-type": "application/json", 
+        "user-agent": "discordapp.com", 
+        "authorization": token
+    }
+	try: 
+		conn.request("DELETE", f"/api/v7/channels/{channel_id}/messages/{message_id}", headers = header_data) 
+		resp = conn.getresponse() 
+		 
+		if 199 < resp.status < 300: 
+			print("     - Deleted!")
+			pass 
+ 
+		else:
+			stderr.write(f"HTTP {resp.status}: {resp.reason}\n")
+			pass
+            
+	except: 
+        stderr.write("Error\n")
